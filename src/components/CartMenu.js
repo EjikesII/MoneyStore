@@ -13,7 +13,7 @@ const CartMenu = () => {
         Cart 
         <span className='cart-container'>
           <FaShoppingCart />
-            <span className='cart-value'>8
+            <span className='cart-value'>12
             </span>
         </span>
       </Link>
@@ -65,14 +65,14 @@ const Wrapper = styled.div`
     color: var(--clr-white);
     padding: 12px;
   }
-  .auth-btn {
+  .status-btn {
     display: flex;
     align-items: center;
     background: transparent;
     border-color: transparent;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--clr-grey-1);
+    color: var(--clr-blue-1);
     letter-spacing: var(--spacing);
     svg {
       margin-left: 5px;

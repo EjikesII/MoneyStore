@@ -54,5 +54,13 @@ Day 2 Create Project Structure
     4. Create the Routes
     5. Test my Routing design
 
-    Day 3 Working on The Navigation System
-        1. Worked on the Navbar component to create the Menu components
+Day 3 Working on The Navigation System
+        1. Worked on the Navbar component to create the Menu components.
+        2. Created the CartMenu Component and styles
+        3. Published the app to the GitHub Repo
+    Extra work:
+        4. Worked on he Footer Component and styles
+        5. Worked on the sidebar component
+         
+
+
