@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Navbar />
       <Sidebar />
-      <switch>
+      <Switch>
         <Route exact path='/'>
           <Home />
         </Route>
@@ -32,7 +32,7 @@ function App() {
         <Route path='*'>
           <Error />
         </Route>
-      </switch>
+      </Switch>
       <Footer />
     </Router>
   )

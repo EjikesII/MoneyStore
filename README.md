@@ -37,7 +37,7 @@ Day 1 Project Planning
 Day 2 Create Project Structure
     
     1. Create the project project folders and Navigation Route.
-    2. Create the Routes Components and their corresponding paes
+    2. Created the Routes Components and their corresponding pages
          Component            Corresponding Page
         - Home                  HomePage.js
         - About                 AboutPage.js
