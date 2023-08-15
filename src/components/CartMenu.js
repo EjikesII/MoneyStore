@@ -5,11 +5,13 @@ import styled from 'styled-components'
 import { useProductsContext } from '../context/products_context'
 import { useCartContext } from '../context/cart_context'
 import { useUserContext } from '../context/user_context'
+import Sidebar from './Sidebar'
 
 const CartMenu = () => {
+  const {sidebarClose} = useProductsContext()
   return (
     <Wrapper className='cart-btn-wrapper'>
-      <Link to='/cart' className='cart-btn'>
+      <Link to='/cart' className='cart-btn' onClick={sidebarClose}>
         Cart 
         <span className='cart-container'>
           <FaShoppingCart />
@@ -21,7 +23,6 @@ const CartMenu = () => {
         Login <FaUserPlus />
       </button>
     </Wrapper>
-
   )
   
 }

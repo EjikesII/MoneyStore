@@ -1,3 +1,4 @@
+
 import React from 'react'
 import logo from '../assets/logo.svg'
 import { Link } from 'react-router-dom'
@@ -11,13 +12,14 @@ import { GiLightningMask } from 'react-icons/gi'
 
 const Sidebar = () => {
   const {isSidebarOpen, sidebarClose} = useProductsContext()
-  
+  console.log(sidebarClose)
   return (
     <SidebarContainer>
-      <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+      <aside 
+        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
         <div className='sidebar-header'>
           <img src={logo} className='logo' alt='moneystore' />
-          <button type= 'button' className='close-btn' onClick={sidebarClose}>
+          <button className='close-btn' onClick={sidebarClose}>
             <FaTimes />
           </button>
         </div>

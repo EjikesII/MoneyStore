@@ -1,10 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-const ErrorPage = () => {
-  return <h4>error page</h4>
-}
 
+const ErrorPage = () => {
+  return ( 
+    <Wrapper className='page-100'>
+      <section>
+        <h1> Error 404!</h1>
+        <h3> The page does not exist!!</h3>
+        <Link to='/' className='btn'>
+          Back to Home page
+        </Link>
+      </section>
+    </Wrapper> 
+  )   
+}
 const Wrapper = styled.main`
   background: var(--clr-primary-10);
   display: flex;

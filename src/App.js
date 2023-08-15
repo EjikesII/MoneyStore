@@ -2,8 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
 
-import { Home, About, Cart, Checkout, Error, PersonalRoute, Product, SingleProduct  } from './pages'
-import CheckoutPage from './pages/CheckoutPage'
+import { Home, About, Cart, Checkout, Error, PersonalRoute, Products, SingleProduct  } from './pages'
+//import CheckoutPage from './pages/CheckoutPage'
 
 function App() {
   return (
@@ -14,19 +14,19 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route exact path='/about'>
+        <Route exact path='/About'>
           <About />
         </Route>
         <Route exact path='/cart'>
           <Cart />
         </Route>
-        <Route exact path='/products'>
-          <Product />
+        <Route exact path='/Products'>
+          <Products />
         </Route>
-        <Route exact path='/products/:id' children={<SingleProduct />} >
+        <Route exact path='/Products/:id' children={<SingleProduct />} >
           <SingleProduct />
         </Route>
-        <Route exact path='/checkout'>
+        <Route exact path='/Checkout'>
           <Checkout />
         </Route>
         <Route path='*'>

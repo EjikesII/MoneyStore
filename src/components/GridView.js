@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Product from './Product'
+import Product from './Products'
 
 const GridView = () => {
   return <h4>Grid View</h4>
