@@ -12,7 +12,6 @@ import { GiLightningMask } from 'react-icons/gi'
 
 const Sidebar = () => {
   const {isSidebarOpen, sidebarClose} = useProductsContext()
-  console.log(sidebarClose)
   return (
     <SidebarContainer>
       <aside 

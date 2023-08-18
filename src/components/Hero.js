@@ -20,9 +20,14 @@ const Hero = () => {
           </p>
           <Link to='/products' className='btn hero-btn'>Shop Now</Link>
       </article>
+      <article className='img-container'>
+        <img src={heroBcg} alt='kitchen wares' className='main-img'/>
+        <img src={heroBcg2} alt='personal care' className='accent-img'/>
+
+      </article>
     </Wrapper>
   ) 
-}
+};
 
 const Wrapper = styled.section`
   min-height: 60vh;

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { PageHero } from '../components'
 import aboutImg from '../assets/hero-bcg.jpeg'
+import { Contact } from '../components'
 
 const AboutPage = () => {
   return (
@@ -23,6 +24,7 @@ const AboutPage = () => {
 
         </article>
       </Wrapper>
+      <Contact />
     </main>
   )
 }
