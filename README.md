@@ -63,4 +63,8 @@ Day 3 Working on The Navigation System
         5. Worked on the sidebar component
          
 
-
+day 4 Worked on the Navigation & pages
+    1. Automated the Sidebar display
+    2. fixed the sidebarClose bug.
+    3. Implemented the About component and Aboutpage design.
+    4. Implemented the HomePage design
