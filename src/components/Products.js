@@ -3,9 +3,21 @@ import styled from 'styled-components'
 import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { links } from '../utils/constants'
 
-const Products = () => {
-  return <h4>product</h4>
+const Products = ({ image, name, price, id }) => {
+  return <Wrapper>
+    <div className='container'>
+      <img src={image} alt={name} />
+      <Link to={`/products/${id}`} className='link'>
+        <FaSearch />
+      </Link>
+    </div>
+    <footer>
+      <h5>{name}</h5>
+      <p>{formatPrice(price)}</p>
+    </footer>
+  </Wrapper>
 }
 
 const Wrapper = styled.article`
