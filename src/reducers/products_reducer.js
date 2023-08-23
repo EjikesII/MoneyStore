@@ -31,11 +31,34 @@ const products_reducer = (state, action) => {
     }
   }
   if (action.type === GET_PRODUCTS_ERROR) {
-    return{...state,
+    return{
+      ...state,
       products_loading: false,
       product_error:true
     }
   }
+  if (action.type === GET_SINGLE_PRODUCT_BEGIN) {
+    return {
+      ...state, 
+      single_item_loader: true, 
+      single_item_error: false,
+    }
+  }
+  if (action.type === GET_SINGLE_PRODUCT_SUCCESS) {
+    return {
+      ...state,
+      single_item_loader: false,
+      single_item: action.payload,
+    }
+  }
+  if (action.type === GET_SINGLE_PRODUCT_ERROR) {
+    return {
+      ...state,
+      single_item_loader: false,
+      single_item_error: true,
+    }
+  }
+  
   throw new Error(`No Matching "${action.type}" - action type`)
 }
 
