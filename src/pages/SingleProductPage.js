@@ -60,8 +60,8 @@ return (
       <Link to='/products' className='btn'>
         Back to catalog
       </Link>
-      <div className='products-center'>
-        <ProductImages />
+      <div className='product-center'>
+        <ProductImages images={images} />
         <section className='content'>
           <h2> {name} </h2>
           <Stars />
@@ -79,6 +79,8 @@ return (
             <span> Brand: </span>
                 {company}
           </p>
+          <hr />
+          {stock > 0 && <AddToCart />}
         </section>
       </div>
     </div>
