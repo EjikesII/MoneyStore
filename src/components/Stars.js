@@ -17,9 +17,7 @@ const Stars = ({stars, reviews}) => {
   })
   return (
     <Wrapper> 
-      <div className='stars'>
-       
-      </div>
+      <div className='stars'>{myStar}</div>
       <p className='reviews'> ({reviews} customer reviews) </p>
     </Wrapper>
   )
