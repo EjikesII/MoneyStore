@@ -79,7 +79,7 @@ return (
                 {company}
           </p>
           <hr />
-          {stock > 0 && <AddToCart />}
+          {stock > 0 && <AddToCart item={item} />}
         </section>
       </div>
     </div>
