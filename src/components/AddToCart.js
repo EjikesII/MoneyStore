@@ -8,6 +8,24 @@ import AmountButtons from './AmountButtons'
 const AddToCart = ({item}) => {
   const {id, stock, colors} = item
   const [mainColor, setMainColor] = useState(colors[0])
+  const [orderQty, setOrderQty] = useState(1)
+
+  const add = () => {
+    setOrderQty((oldQty) => {
+      let newQty = oldQty + 1
+      if (newQty > stock){
+        newQty = stock
+      }
+      return newQty
+    })
+  }
+  const reduce = () => {
+    setOrderQty((oldQty) => {
+    let newQty = oldQty - 1
+    if(newQty < 1)
+    newQty = 1
+    }
+  )}
 
   return(
     <Wrapper>
@@ -27,7 +45,12 @@ const AddToCart = ({item}) => {
           })}
         </div>
       </div>
-      <div className='btn-container'></div>
+      <div className='btn-container'>
+        <AmountButtons orderQty={orderQty} add={add} reduce={reduce} />
+        <Link to='/cart' className='btn'>
+          Buy Now
+        </Link>
+      </div>
     </Wrapper>
   )
 }
