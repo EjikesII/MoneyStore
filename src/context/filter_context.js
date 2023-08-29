@@ -13,8 +13,9 @@ import {
 import { useProductsContext } from './products_context'
 
 const initialState = {
-  filtered_items:[],
-  all_items:[]
+  filtered_products:[],
+  all_products:[],
+  grid_view: true,
 }
 
 const FilterContext = React.createContext()
@@ -34,7 +35,7 @@ useEffect(() => {
     </FilterContext.Provider>
   )
 }
-// make sure use
+
 export const useFilterContext = () => {
   return useContext(FilterContext)
 }
