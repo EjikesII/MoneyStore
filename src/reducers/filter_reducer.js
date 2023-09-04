@@ -34,26 +34,30 @@ const filter_reducer = (state, action) => {
     const {sort, filtered_products} = state
     let tempProducts = [...filtered_products]
     if (sort === 'lowest_price') {
-      tempProducts = tempProducts.sort((a,b)=> a.price - b.price)
+      tempProducts = tempProducts.sort((a,b)=> {
+        return a.price - b.price
+      })
     }
     if (sort === 'highest_price') {
-      tempProducts = tempProducts.sort((a,b)=> b.price - a.price)
+      tempProducts = tempProducts.sort((a,b)=> {
+       return b.price - a.price 
+      })
     }
     if (sort === 'name-a') {
       tempProducts = tempProducts.sort((a,b) => {
-        return a.name.localcompare(b.name)
+        return a.name.localeCompare(b.name)
       })
     }
     if (sort === 'name-z') {
       tempProducts = tempProducts.sort((a,b) => {
-        return b.name.localcompare(a.name)
+        return b.name.localeCompare(a.name)
       })
     }
     return {...state, filtered_products: tempProducts}
   }
   if (action.type === UPDATE_FILTERS) {
     const {name, value} = action.payload
-    return {...state, filters:{...state.filters,[name]:value }}
+    return {...state, filters:{...state.filters, [name]:value }}
   }
   if (action.type === FILTER_PRODUCTS) {
     return {...state}
