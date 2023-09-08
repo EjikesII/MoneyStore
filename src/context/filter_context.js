@@ -19,7 +19,8 @@ const initialState = {
   sort:'lowest_price',
   filters: {
     text: '',
-    brand:'all',
+    company:'all',
+    category:'all',
     color:'all',
     min_price:0,
     max_price:0,
@@ -56,8 +57,10 @@ const sortUpdate = (e) => {
 const updateFilters = (e) => {
   let name = e.target.name
   let value = e.target.value
-  dispatch({type:UPDATE_FILTERS, payload:{ name,value } })
-  console.log(name, value)
+  if(name === 'category') {
+    value = e.target.textContent
+  }
+  dispatch({type: UPDATE_FILTERS, payload: { name,value } })
 }
 const clearFilters = () => {}
   return (
