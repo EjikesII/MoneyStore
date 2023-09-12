@@ -19,8 +19,8 @@ const colors = getUniqueValues(all_products, 'colors')
   return (
     <Wrapper> 
       <div className='content'>
-        {/* search input */}
         <form onSubmit={(e)=> e.preventDefault()}>
+          {/* search input */}
           <div className='form-control'>
             <input type='text'
             name='text'
