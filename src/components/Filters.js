@@ -110,10 +110,29 @@ const colors = getUniqueValues(all_products, 'colors')
                 min={min_price}
                 max={max_price}
                 value={price} />
-                
                 </div>
               {/* end of price */}
+
+              {/* shipping component */}
+                <div className='form-control shipping'>
+                  <label htmlFor='shipping'> free shipping </label>
+                  <input 
+                  type ='checkbox' 
+                  name ='shipping' 
+                  id = 'shipping' 
+                  onChange = {updateFilters}
+                  checked = {shipping}
+                  />
+                </div>
+          
+              {/* End of shipping component */}
         </form>
+        <button 
+          type ='button'
+          className='clear-btn'
+          onClick = { clearFilters } >
+            clear select
+          </button>
       </div>
     </Wrapper>
   )
