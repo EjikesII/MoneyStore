@@ -71,7 +71,7 @@ const colors = getUniqueValues(all_products, 'colors')
               {/* colors */}
               <div className='form-control'>
                 <h5>Color</h5>
-                <div className='color'>
+                <div className='colors'>
                   {colors.map((c, index) => {
                     if (c === 'all') {
                     return ( 

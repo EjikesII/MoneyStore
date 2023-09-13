@@ -13,7 +13,7 @@ const AddToCart = ({item}) => {
   const add = () => {
     setOrderQty((oldQty) => {
       let newQty = oldQty + 1
-      if (newQty > stock){
+      if (newQty > stock) {
         newQty = stock
       }
       return newQty
@@ -22,11 +22,12 @@ const AddToCart = ({item}) => {
   const reduce = () => {
     setOrderQty((oldQty) => {
     let newQty = oldQty - 1
-    if(newQty < 1)
-    newQty = 1
+    if (newQty < 1) {
+      newQty = 1
     }
-  )}
-
+    return newQty
+  })
+}
   return(
     <Wrapper>
       <div className='colors'>
