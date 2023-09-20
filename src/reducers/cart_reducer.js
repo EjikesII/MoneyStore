@@ -7,7 +7,26 @@ import {
 } from '../actions'
 
 const cart_reducer = (state, action) => {
-  return state
+  if (action.type === ADD_TO_CART) {
+    const {id, color, orderQty, item} = action.payload
+    const tempItem = state.cart.find((i) => i.id === id + color)
+    if (tempItem) {
+
+    }
+    else {
+      const newItem = {
+        id: id + color,
+        name: item.name,
+        color,
+        orderQty,
+        Image: item.images[0].url,
+        price: item.price,
+        max: item.stock,
+      }
+      return {...state, cart:[...state.cart, newItem]}
+    }
+
+  }
   throw new Error(`No Matching "${action.type}" - action type`)
 }
 
