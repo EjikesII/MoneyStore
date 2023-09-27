@@ -5,14 +5,15 @@ import { FaCheck } from 'react-icons/fa'
 import { useCartContext } from '../context/cart_context'
 import AmountButtons from './AmountButtons'
 
-const AddToCart = ({item}) => {
-  const {AddToCart} = useCartContext
+const AddToCart = ({ item }) => {
+  // add to cart function
+  const { addToCart } = useCartContext()
   const {id, stock, colors} = item
   const [mainColor, setMainColor] = useState(colors[0])
-  const [orderQty, setOrderQty] = useState(1)
+  const [amount, setAmount] = useState(1)
 
   const add = () => {
-    setOrderQty((oldQty) => {
+    setAmount((oldQty) => {
       let newQty = oldQty + 1
       if (newQty > stock) {
         newQty = stock
@@ -21,7 +22,7 @@ const AddToCart = ({item}) => {
     })
   }
   const reduce = () => {
-    setOrderQty((oldQty) => {
+    setAmount((oldQty) => {
     let newQty = oldQty - 1
     if (newQty < 1) {
       newQty = 1
@@ -32,10 +33,10 @@ const AddToCart = ({item}) => {
   return(
     <Wrapper>
       <div className='colors'>
-        <span>colors: </span>
+        <span>colors : </span>
         <div>
           {colors.map((color, index) => {
-            return( 
+            return ( 
               <button 
                 key={index} 
                 style={{background: color}} 
@@ -48,10 +49,17 @@ const AddToCart = ({item}) => {
         </div>
       </div>
       <div className='btn-container'>
-        <AmountButtons orderQty={orderQty} add={add} reduce={reduce} />
-        <Link to='/cart' className='btn' 
-        onClick={() => (id, mainColor, orderQty, item) }>
-          Buy Now
+        <AmountButtons 
+         amount={amount}
+         add={add} 
+         reduce={reduce} 
+        />
+         <Link
+          to='/cart'
+          className='btn'
+          onClick={() => addToCart(id, mainColor, amount, item)}
+        >
+          add to cart
         </Link>
       </div>
     </Wrapper>

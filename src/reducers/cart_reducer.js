@@ -8,7 +8,7 @@ import {
 
 const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
-    const {id, color, orderQty, item} = action.payload
+    const {id, color, amount, item} = action.payload
     const tempItem = state.cart.find((i) => i.id === id + color)
     if (tempItem) {
 
@@ -18,12 +18,12 @@ const cart_reducer = (state, action) => {
         id: id + color,
         name: item.name,
         color,
-        orderQty,
+        amount,
         Image: item.images[0].url,
         price: item.price,
         max: item.stock,
       }
-      return {...state, cart:[...state.cart, newItem]}
+      return { ...state, cart: [...state.cart, newItem] }
     }
 
   }
