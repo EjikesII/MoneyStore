@@ -8,6 +8,15 @@ import {
   COUNT_CART_TOTALS,
 } from '../actions'
 
+const getLocalStorage = () => {
+  let cart = localStorage.getItem('cart')
+  if (cart) {
+    return JSON.parse(localStorage.getItem('cart'))
+  }
+  else {
+    return []
+  }
+}
 const initialState = {
   cart: [],
   total_items: 0,
@@ -24,8 +33,23 @@ export const CartProvider = ({ children }) => {
   const addToCart = (id, color, amount, item) => {
     dispatch({ type: ADD_TO_CART, payload: {id, color, amount, item} })
   }
+  // remove item from cart
+  const removeItem = (id) => {}
+
+  //toggle amount of items
+  const toggleAmount = (id,value) => {}
+
+  //clears all item from cart
+  const clearCart = () => {}
+  
+  
+  useEffect( () => {
+    localStorage.setItem('cart', JSON.stringify(state.cart))
+  }, [state.cart])
   return (
-    <CartContext.Provider value={{ ...state, addToCart, }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ ...state, addToCart, removeItem, toggleAmount, clearCart }}>
+      {children}
+    </CartContext.Provider>
   )
 }
 // make sure use
