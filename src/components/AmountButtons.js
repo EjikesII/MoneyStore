@@ -7,15 +7,13 @@ const AmountButtons = ({ add, reduce, amount }) => {
     <Wrapper className='amount-btn'>
       <button type='button'
       className='amount-btn'
-      onClick={reduce}
-      >
+      onClick={reduce}>
         <FaMinus />
       </button>
       <h2 className=' amount'> {amount} </h2>
       <button type='button' 
       className='amount-btn'
-      onClick={add}
-      >
+      onClick={add}>
         <FaPlus />
       </button>
     </Wrapper>

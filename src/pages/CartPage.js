@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useCartContext } from '../context/cart_context'
 import { Link } from 'react-router-dom'
 import { CartContent, PageHero } from '../components'
+import CartColumns from '../components/CartColumns'
 
 const CartPage = () => {
   const { cart } = useCartContext()
