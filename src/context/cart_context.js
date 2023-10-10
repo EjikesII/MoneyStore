@@ -34,13 +34,19 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: ADD_TO_CART, payload: {id, color, amount, item} })
   }
   // remove item from cart
-  const removeItem = (id) => {}
+  const removeItem = (id) => {
+    dispatch ({ type: REMOVE_CART_ITEM, payload: id })
+  }
 
   //toggle amount of items
-  const toggleAmount = (id,value) => {}
+  const toggleAmount = (id, value) => {
+    dispatch ({type: TOGGLE_CART_ITEM_AMOUNT, payload: {id, value}})
+  }
 
   //clears all item from cart
-  const clearCart = () => {}
+  const clearCart = () => {
+    dispatch ({ type: CLEAR_CART })
+  }
   
   
   useEffect( () => {
