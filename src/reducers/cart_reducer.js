@@ -33,7 +33,7 @@ const cart_reducer = (state, action) => {
         name: item.name,
         color,
         amount,
-        Image: item.images[0].url,
+        image: item.images[0].url,
         price: item.price,
         max: item.stock,
       }
@@ -47,32 +47,30 @@ const cart_reducer = (state, action) => {
   if(action.type === CLEAR_CART) {
     return {...state, cart: []}
   }
-  if(action.type === TOGGLE_CART_ITEM_AMOUNT){
-    const {id, value} = action.payload
+  if (action.type === TOGGLE_CART_ITEM_AMOUNT) {
+    const { id, value } = action.payload
     const tempCart = state.cart.map((item) => {
-      if(item.id === id) {
-        if(value === 'inc') {
+      if (item.id === id) {
+        if (value === 'inc') {
           let newAmount = item.amount + 1
-          if(newAmount > item.max) {
+          if (newAmount > item.max) {
             newAmount = item.max
           }
           return { ...item, amount: newAmount }
         }
-        if(value === 'dec') {
+        if (value === 'dec') {
           let newAmount = item.amount - 1
-          if(newAmount < 1) {
+          if (newAmount < 1) {
             newAmount = 1
           }
           return { ...item, amount: newAmount }
         }
       }
-      else {
-        return item
-      }
+      return item
     })
-    return { ...state, cart:tempCart }
+    return { ...state, cart: tempCart }
   }
-  throw new Error(`No Matching "${action.type}" - action type`)
+   throw new Error(`No Matching "${action.type}" - action type`)
 }
 
 export default cart_reducer
