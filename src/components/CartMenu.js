@@ -9,13 +9,14 @@ import Sidebar from './Sidebar'
 
 const CartMenu = () => {
   const {sidebarClose} = useProductsContext()
+  const {total_items} = useCartContext()
   return (
     <Wrapper className='cart-btn-wrapper'>
       <Link to='/cart' className='cart-btn' onClick={sidebarClose}>
         Cart 
         <span className='cart-container'>
           <FaShoppingCart />
-            <span className='cart-value'>12
+            <span className='cart-value'>{total_items}
             </span>
         </span>
       </Link>
